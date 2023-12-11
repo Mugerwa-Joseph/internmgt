@@ -15,15 +15,15 @@
 
     <div class="container mt-4">
         <div class="jumbotron">
-            <form>
+            <form action="/student" method="post">
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="stuName">STUDENT NAME</label>
-                    <input type="text" class="form-control" id="" placeholder="YOUR FULL NAME">
+                    <input type="text" name="stuName" class="form-control" id="" placeholder="YOUR FULL NAME">
                   </div>
                   <div class="form-group col-md-6">
                     <label for="campus">CAMPUS</label>
-                    <select id="" class="form-control">
+                    <select id="" name="campus" class="form-control">
                         <option selected>Choose...</option>
                         <option>MAIN</option>
                         <option>KAMPALA</option>
@@ -37,44 +37,44 @@
                     <div class="form-group col-md-4">
 
                         <label for="school">SCHOOL NAME</label>
-                        <input type="text" class="form-control" id="" placeholder="SCHOOL NAME">
+                        <input type="text" name="schoolName" class="form-control" id="" placeholder="SCHOOL NAME">
 
                     </div>
                     <div class="form-group col-md-4">
 
                         <label for="school">SCHOOL DISTRICT</label>
-                        <input type="text" class="form-control" id="" placeholder="SCHOOL DISTRICT">
+                        <input type="text" name="schoolDistrict" class="form-control" id="" placeholder="SCHOOL DISTRICT">
 
                     </div>
                     <div class="form-group col-md-4">
 
                         <label for="school">SCHOOL TOWN</label>
-                        <input type="text" class="form-control" id="" placeholder="SCHOOL TOWN">
+                        <input type="text" name="schoolTown" class="form-control" id="" placeholder="SCHOOL TOWN">
 
                     </div>
                 </div>
                 <div class="form-group">
                   <label for="inputAddress">DISTANCE FROM BUGEMA</label>
-                  <input type="text" class="form-control" id="" placeholder="ESTIMATE THE NUMBER OF KMs FROM BUGEMA">
+                  <input type="text" name="distanceFromBugema" class="form-control" id="" placeholder="ESTIMATE THE NUMBER OF KMs FROM BUGEMA">
                 </div>
 
                 <div class="form-row">
                     <div class="form-group col-md-4">
 
                         <label for="school">REGISTRATION NUMBER</label>
-                        <input type="text" class="form-control" id="" placeholder="YOUR REG NUMBER">
+                        <input type="text" name="regNumber" class="form-control" id="" placeholder="YOUR REG NUMBER">
 
                     </div>
                     <div class="form-group col-md-4">
 
                         <label for="school">PHONE NUMBER</label>
-                        <input type="text" class="form-control" id="" placeholder="YOUR PRIMARY NUMBER">
+                        <input type="text" name="phoneNumber" class="form-control" id="" placeholder="YOUR PRIMARY NUMBER">
 
                     </div>
                     <div class="form-group col-md-4">
 
                         <label for="inputEmail4">EMAIL ADDRESS</label>
-                        <input type="email" class="form-control" id="" placeholder="ACTIVE EMAIL ADDRESS">    
+                        <input type="email" name="emailAddress" class="form-control" id="" placeholder="ACTIVE EMAIL ADDRESS">    
 
                     </div>
                 </div>
@@ -82,11 +82,11 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                       <label for="amtPaid">INITIAL AMOUNT PAID</label>
-                      <input type="number" class="form-control" id="" placeholder="AMOUNT PAID INITIALLY">
+                      <input type="number" name="initialAmountPaid" class="form-control" id="" placeholder="AMOUNT PAID INITIALLY">
                     </div>
                     <div class="form-group col-md-6">
                       <label for="practice">PRACTICE REGISTERED</label>
-                      <select id="" class="form-control">
+                      <select id="" name="practiceRegistered" class="form-control">
                           <option selected>Choose...</option>
                           <option>PRACTICE ONE</option>
                           <option>PRACTICE TWO</option>

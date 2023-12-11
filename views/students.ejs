@@ -1,0 +1,73 @@
+<!-- students.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registered Students</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+  <div class="container mt-4">
+
+    <h1>Registered Students </h1>
+    <table class="table table-striped">
+      <tr>
+        <th class="col">Reg Number</th>
+        <th class="col">Name</th>
+        <th class="col">Supervisor 1</th>
+        <th class="col">Supervisor 2</th>
+        <th class="col">AVERAGE</th>
+        <th class="col">Actions</th>
+        <!-- Add more columns as needed -->
+      </tr>
+      <% students.forEach(student => { %>
+        <tr>
+          <td><%= student.regNumber %></td>
+          <td><%= student.stuName %></td>
+          <!-- Add more columns as needed -->
+          <td>
+            <form action="/student" method="post">
+              <input type="hidden" name="studentId" value="<%= student._id %>">
+              <input type="number" name="supervisor1" value="<%= student.supervisor1 || '' %>">
+            </form>
+          </td>
+          <td>
+            <form action="/student" method="post">
+              <input type="hidden" name="studentId" value="<%= student._id %>">
+              <input type="number" name="supervisor2" value="<%= student.supervisor2 || '' %>">
+            </form>
+          </td>
+          <td><%= student.average || '0.00' %></td>
+          <td>
+            <button type="button" onclick="submitForm('<%= student._id %>')">Save</button>
+          </td>
+        </tr>
+      <% }); %>
+    
+      <script>
+        function submitForm(studentId) {
+          // Use JavaScript to submit the corresponding form
+          document.querySelector(`form input[name="studentId"][value="${studentId}"]`).closest('form').submit();
+        }
+      </script>
+    </table>
+    
+
+  <!-- Pagination Links -->
+  <% if (students.length === 10) { %>
+    <a href="/students?page=<%= parseInt(req.query.page || 1) - 1 %>">Previous</a>
+    <a href="/students?page=<%= parseInt(req.query.page || 1) + 1 %>">Next</a>
+  <% } %>
+
+
+  </div>
+  
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
